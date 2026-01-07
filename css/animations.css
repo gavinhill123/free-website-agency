@@ -445,11 +445,11 @@ html {
     transform: scale(1.1) rotate(5deg);
 }
 
-/* Gradient Background Animation */
-.hero-background {
+/* Gradient Background Animation - DISABLED for static background */
+/* .hero-background {
     background-size: 200% 200%;
     animation: gradientShift 15s ease infinite;
-}
+} */
 
 /* Link Underline Animation */
 .nav-link {

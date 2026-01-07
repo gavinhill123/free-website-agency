@@ -219,12 +219,12 @@ p {
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url('../images/glencoe.jpg');
+    background-image: url('../scottishwebsite.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     z-index: -1;
-    filter: blur(3px);
+    filter: blur(0px);
 }
 
 .hero-background::before {
@@ -285,19 +285,11 @@ p {
 }
 
 .hero-wave {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    overflow: hidden;
-    line-height: 0;
+    display: none;
 }
 
 .hero-wave svg {
-    position: relative;
-    display: block;
-    width: calc(100% + 1.3px);
-    height: 120px;
+    display: none;
 }
 
 /* ===================================
@@ -306,6 +298,9 @@ p {
 .why-choose-us {
     padding: var(--section-padding);
     background: var(--white);
+    margin-top: -1px;
+    position: relative;
+    z-index: 10;
 }
 
 .features-grid {

@@ -62,10 +62,9 @@
     }
     
     .logo span {
-        max-width: 200px;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
+        font-size: 15px;
+        line-height: 1.2;
+        max-width: 180px;
     }
     
     .nav-menu {

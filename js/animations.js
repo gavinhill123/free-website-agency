@@ -75,20 +75,21 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // ===================================
-    // Parallax Effect for Hero Section
+    // Parallax Effect for Hero Section - DISABLED
     // ===================================
-    const heroBackground = document.querySelector('.hero-background');
+    // Parallax effect disabled for static background
+    // const heroBackground = document.querySelector('.hero-background');
     
-    if (heroBackground) {
-        window.addEventListener('scroll', throttle(() => {
-            const scrolled = window.pageYOffset;
-            const parallaxSpeed = 0.5;
-            
-            if (scrolled < window.innerHeight) {
-                heroBackground.style.transform = `translateY(${scrolled * parallaxSpeed}px)`;
-            }
-        }, 16)); // ~60fps
-    }
+    // if (heroBackground) {
+    //     window.addEventListener('scroll', throttle(() => {
+    //         const scrolled = window.pageYOffset;
+    //         const parallaxSpeed = 0.5;
+    //
+    //         if (scrolled < window.innerHeight) {
+    //             heroBackground.style.transform = `translateY(${scrolled * parallaxSpeed}px)`;
+    //         }
+    //     }, 16)); // ~60fps
+    // }
     
     // ===================================
     // Typing Effect for Hero Title (Optional)
