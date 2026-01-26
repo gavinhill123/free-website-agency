@@ -293,6 +293,201 @@ p {
 }
 
 /* ===================================
+   Hero Header Text
+   =================================== */
+.hero-header-text {
+    text-align: center;
+    color: var(--white);
+    margin-bottom: 40px;
+    padding-top: 40px;
+}
+
+.hero-main-title {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    line-height: 1.2;
+}
+
+.hero-main-subtitle {
+    font-size: 22px;
+    opacity: 0.95;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* ===================================
+   Multi-Step Form
+   =================================== */
+.multi-step-form-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: auto;
+    padding: 0 0 40px 0;
+}
+
+.multi-step-form-card {
+    background: var(--white);
+    border-radius: 20px;
+    padding: 40px;
+    max-width: 700px;
+    width: 100%;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 10;
+}
+
+/* Progress Bar */
+.progress-bar-container {
+    width: 100%;
+    height: 8px;
+    background: #E0E0E0;
+    border-radius: 10px;
+    margin-bottom: 40px;
+    overflow: hidden;
+}
+
+.progress-bar-fill {
+    height: 100%;
+    background: #4CAF50;
+    border-radius: 10px;
+    width: 20%;
+    transition: width 0.5s ease-in-out;
+}
+
+/* Form Steps */
+.form-step {
+    display: none;
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+.form-step.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Question Title */
+.question-title {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--primary-purple);
+    text-align: center;
+    margin-bottom: 30px;
+    line-height: 1.3;
+}
+
+/* Options Container */
+.options-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Option Buttons */
+.option-button {
+    width: 100%;
+    padding: 20px 30px;
+    background: var(--white);
+    border: 2px solid #E0E0E0;
+    border-radius: 12px;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--dark-text);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: left;
+    font-family: var(--font-body);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.option-button:hover {
+    border-color: var(--accent-blue);
+    background: rgba(25, 118, 210, 0.05);
+    transform: translateX(5px);
+}
+
+.option-button:active {
+    transform: translateX(5px) scale(0.98);
+}
+
+.option-button.selected {
+    border-color: var(--accent-blue);
+    background: rgba(25, 118, 210, 0.1);
+    box-shadow: 0 5px 15px rgba(25, 118, 210, 0.2);
+}
+
+.option-button span {
+    flex: 1;
+}
+
+/* Multi-Step Contact Form */
+.multi-step-contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.multi-step-contact-form .form-group {
+    margin-bottom: 0;
+}
+
+.multi-step-contact-form input {
+    width: 100%;
+    padding: 15px 20px;
+    border: 2px solid #E0E0E0;
+    border-radius: 10px;
+    font-family: var(--font-body);
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.multi-step-contact-form input:focus {
+    outline: none;
+    border-color: var(--accent-blue);
+    box-shadow: 0 0 0 3px rgba(25, 118, 210, 0.1);
+}
+
+.btn-submit-multi {
+    width: 100%;
+    padding: 18px;
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+/* Privacy Message */
+.privacy-message {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    color: var(--light-text);
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #E0E0E0;
+    justify-content: center;
+    text-align: center;
+}
+
+.privacy-message i {
+    color: var(--accent-blue);
+    font-size: 16px;
+    flex-shrink: 0;
+}
+
+/* ===================================
    Why Choose Us Section
    =================================== */
 .why-choose-us {

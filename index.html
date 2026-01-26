@@ -49,24 +49,113 @@
     <section id="home" class="hero">
         <div class="hero-background"></div>
         <div class="container">
-            <div class="hero-content">
-                <h1 class="hero-title fade-in">Free Professional Websites That Generate More Enquiries</h1>
-                <p class="hero-subtitle fade-in-delay">Join 250+ UK businesses using their website to win more customers</p>
-                <div class="hero-badges fade-in-delay-2">
-                    <div class="badge">
-                        <i class="fas fa-check-circle"></i>
-                        <span>Designed to generate leads/sales</span>
+            <div class="hero-header-text">
+                <h1 class="hero-main-title">Free Professional Websites That Generate More Enquiries</h1>
+                <p class="hero-main-subtitle">Join 250+ UK businesses using their website to win more customers</p>
+            </div>
+            <div class="multi-step-form-wrapper">
+                <div class="multi-step-form-card">
+                    <!-- Progress Bar -->
+                    <div class="progress-bar-container">
+                        <div class="progress-bar-fill" id="progressBar"></div>
                     </div>
-                    <div class="badge">
-                        <i class="fas fa-check-circle"></i>
-                        <span>No hidden costs</span>
+
+                    <!-- Step 1: Business Type -->
+                    <div class="form-step active" id="step1" data-step="1">
+                        <h2 class="question-title">What type of business do you run?</h2>
+                        <div class="options-container">
+                            <button class="option-button" data-value="Trades (Plumber, Electrician, Builder, etc.)">
+                                <span>Trades (Plumber, Electrician, Builder, etc.)</span>
+                            </button>
+                            <button class="option-button" data-value="Local Service Business">
+                                <span>Local Service Business</span>
+                            </button>
+                            <button class="option-button" data-value="E-commerce">
+                                <span>E-commerce</span>
+                            </button>
+                            <button class="option-button" data-value="Professional Services">
+                                <span>Professional Services</span>
+                            </button>
+                            <button class="option-button" data-value="Other">
+                                <span>Other</span>
+                            </button>
+                        </div>
                     </div>
-                    <div class="badge">
-                        <i class="fas fa-check-circle"></i>
-                        <span>Local Support</span>
+
+                    <!-- Step 2: Website Status -->
+                    <div class="form-step" id="step2" data-step="2">
+                        <h2 class="question-title">Which best describes your current website?</h2>
+                        <div class="options-container">
+                            <button class="option-button" data-value="I don't have a website">
+                                <span>I don't have a website</span>
+                            </button>
+                            <button class="option-button" data-value="I have one, but it doesn't generate leads">
+                                <span>I have one, but it doesn't generate leads</span>
+                            </button>
+                            <button class="option-button" data-value="I have one, but it looks outdated">
+                                <span>I have one, but it looks outdated</span>
+                            </button>
+                            <button class="option-button" data-value="I'm not sure">
+                                <span>I'm not sure</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Business Goals -->
+                    <div class="form-step" id="step3" data-step="3">
+                        <h2 class="question-title">What would more leads mean for your business?</h2>
+                        <div class="options-container">
+                            <button class="option-button" data-value="More phone calls & leads">
+                                <span>More phone calls & leads</span>
+                            </button>
+                            <button class="option-button" data-value="More bookings">
+                                <span>More bookings</span>
+                            </button>
+                            <button class="option-button" data-value="I just need a professional online presence">
+                                <span>I just need a professional online presence</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Step 4: Timeline -->
+                    <div class="form-step" id="step4" data-step="4">
+                        <h2 class="question-title">How soon would you like to get started?</h2>
+                        <div class="options-container">
+                            <button class="option-button" data-value="ASAP">
+                                <span>ASAP</span>
+                            </button>
+                            <button class="option-button" data-value="Within 30 days">
+                                <span>Within 30 days</span>
+                            </button>
+                            <button class="option-button" data-value="Just researching">
+                                <span>Just researching</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Step 5: Contact Form -->
+                    <div class="form-step" id="step5" data-step="5">
+                        <h2 class="question-title">Almost there! Let's get in touch</h2>
+                        <form class="multi-step-contact-form" id="multiStepContactForm">
+                            <div class="form-group">
+                                <input type="text" id="msName" name="name" placeholder="Your Name *" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" id="msEmail" name="email" placeholder="Your Email *" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="tel" id="msPhone" name="phone" placeholder="Your Phone *" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-submit-multi">Get Your Free Quote</button>
+                        </form>
+                    </div>
+
+                    <!-- Privacy Message -->
+                    <div class="privacy-message">
+                        <i class="fas fa-lock"></i>
+                        <span>Your information is safe and will never be shared with third parties</span>
                     </div>
                 </div>
-                <a href="#home" class="btn btn-hero fade-in-delay-3">Get Your Free Website</a>
             </div>
         </div>
         <div class="hero-wave">
@@ -491,7 +580,7 @@
                         <h3>Starter</h3>
                         <div class="price">
                             <span class="currency">£</span>
-                            <span class="amount">24.99</span>
+                            <span class="amount">29.99</span>
                             <span class="period">/month</span>
                         </div>
                         <p class="plan-description">3 Page Website</p>
@@ -507,7 +596,7 @@
                         </div>
                         <div class="feature-item">
                             <i class="fas fa-check"></i>
-                            <span>On-site SEO included</span>
+                            <span>Basic SEO included</span>
                         </div>
                         <div class="feature-item">
                             <i class="fas fa-check"></i>
@@ -531,7 +620,7 @@
                         <h3>Professional</h3>
                         <div class="price">
                             <span class="currency">£</span>
-                            <span class="amount">35.99</span>
+                            <span class="amount">34.99</span>
                             <span class="period">/month</span>
                         </div>
                         <p class="plan-description">6 Page Website</p>
@@ -547,7 +636,7 @@
                         </div>
                         <div class="feature-item">
                             <i class="fas fa-check"></i>
-                            <span>On-site SEO included</span>
+                            <span>Advanced SEO included</span>
                         </div>
                         <div class="feature-item">
                             <i class="fas fa-check"></i>
@@ -570,7 +659,7 @@
                         <h3>Enterprise</h3>
                         <div class="price">
                             <span class="currency">£</span>
-                            <span class="amount">49.99</span>
+                            <span class="amount">45.99</span>
                             <span class="period">/month</span>
                         </div>
                         <p class="plan-description">10+ Page Website</p>
@@ -586,7 +675,7 @@
                         </div>
                         <div class="feature-item">
                             <i class="fas fa-check"></i>
-                            <span>On-site SEO included</span>
+                            <span>Advanced on-site and off-site SEO</span>
                         </div>
                         <div class="feature-item">
                             <i class="fas fa-check"></i>

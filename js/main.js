@@ -319,6 +319,187 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log('%cWebsite built with ❤️ for Scottish businesses', 'color: #1976D2; font-size: 14px;');
     console.log('%cInterested in a free website? Contact us at hello@scottishfreewebsiteguys.co.uk', 'color: #757575; font-size: 12px;');
     
+    // ===================================
+    // Multi-Step Form
+    // ===================================
+    const multiStepForm = {
+        currentStep: 1,
+        totalSteps: 5,
+        formData: {
+            businessType: '',
+            websiteStatus: '',
+            businessGoals: '',
+            timeline: '',
+            contact: {
+                name: '',
+                email: '',
+                phone: ''
+            }
+        },
+        
+        init: function() {
+            this.setupEventListeners();
+            this.updateProgressBar();
+        },
+        
+        setupEventListeners: function() {
+            // Option buttons for steps 1-4
+            const optionButtons = document.querySelectorAll('.option-button');
+            optionButtons.forEach(button => {
+                button.addEventListener('click', (e) => {
+                    this.handleOptionClick(e.currentTarget);
+                });
+            });
+            
+            // Contact form submission (step 5)
+            const contactForm = document.getElementById('multiStepContactForm');
+            if (contactForm) {
+                contactForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    this.handleFormSubmit();
+                });
+            }
+        },
+        
+        handleOptionClick: function(button) {
+            const step = this.currentStep;
+            const value = button.getAttribute('data-value');
+            
+            // Store the answer
+            switch(step) {
+                case 1:
+                    this.formData.businessType = value;
+                    break;
+                case 2:
+                    this.formData.websiteStatus = value;
+                    break;
+                case 3:
+                    this.formData.businessGoals = value;
+                    break;
+                case 4:
+                    this.formData.timeline = value;
+                    break;
+            }
+            
+            // Visual feedback - highlight selected option
+            const currentStepElement = document.getElementById(`step${step}`);
+            const allButtons = currentStepElement.querySelectorAll('.option-button');
+            allButtons.forEach(btn => btn.classList.remove('selected'));
+            button.classList.add('selected');
+            
+            // Auto-advance to next step after a short delay
+            setTimeout(() => {
+                this.nextStep();
+            }, 500);
+        },
+        
+        nextStep: function() {
+            if (this.currentStep < this.totalSteps) {
+                // Hide current step
+                const currentStepElement = document.getElementById(`step${this.currentStep}`);
+                currentStepElement.classList.remove('active');
+                
+                // Move to next step
+                this.currentStep++;
+                
+                // Show next step
+                const nextStepElement = document.getElementById(`step${this.currentStep}`);
+                nextStepElement.classList.add('active');
+                
+                // Update progress bar
+                this.updateProgressBar();
+                
+                // Scroll to top of form
+                const formCard = document.querySelector('.multi-step-form-card');
+                if (formCard) {
+                    formCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+                
+                // Focus on first input if it's the contact form
+                if (this.currentStep === 5) {
+                    setTimeout(() => {
+                        const nameInput = document.getElementById('msName');
+                        if (nameInput) nameInput.focus();
+                    }, 400);
+                }
+            }
+        },
+        
+        updateProgressBar: function() {
+            const progressBar = document.getElementById('progressBar');
+            if (progressBar) {
+                const percentage = (this.currentStep / this.totalSteps) * 100;
+                progressBar.style.width = percentage + '%';
+            }
+        },
+        
+        handleFormSubmit: function() {
+            // Get contact form values
+            this.formData.contact.name = document.getElementById('msName').value;
+            this.formData.contact.email = document.getElementById('msEmail').value;
+            this.formData.contact.phone = document.getElementById('msPhone').value;
+            
+            // Add timestamp
+            this.formData.timestamp = new Date().toISOString();
+            
+            // Show loading state
+            const submitBtn = document.querySelector('.btn-submit-multi');
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = 'Sending...';
+            submitBtn.disabled = true;
+            
+            // Log form data (replace with actual API call)
+            console.log('Multi-Step Form Data:', this.formData);
+            
+            // Simulate form submission
+            setTimeout(() => {
+                // Success message
+                alert('Thank you! We\'ll get back to you within 24 hours with your free website quote.');
+                
+                // Reset form
+                this.resetForm();
+                
+                // Reset button
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+            }, 1500);
+        },
+        
+        resetForm: function() {
+            // Reset to step 1
+            document.querySelectorAll('.form-step').forEach(step => {
+                step.classList.remove('active');
+            });
+            document.getElementById('step1').classList.add('active');
+            
+            // Reset data
+            this.currentStep = 1;
+            this.formData = {
+                businessType: '',
+                websiteStatus: '',
+                businessGoals: '',
+                timeline: '',
+                contact: { name: '', email: '', phone: '' }
+            };
+            
+            // Reset progress bar
+            this.updateProgressBar();
+            
+            // Clear form inputs
+            document.getElementById('multiStepContactForm').reset();
+            
+            // Remove selected states
+            document.querySelectorAll('.option-button').forEach(btn => {
+                btn.classList.remove('selected');
+            });
+        }
+    };
+    
+    // Initialize multi-step form if it exists
+    if (document.querySelector('.multi-step-form-card')) {
+        multiStepForm.init();
+    }
+    
 });
 
 // ===================================
